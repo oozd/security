@@ -1,0 +1,45 @@
+Onur Özdemir
+2036473
+
+Exact same topology used which is stated on the homework pdf,
+but I provide a topology file in the zip anyways. You can use
+that provided topology file too.
+
+############ Important Points #############
+*   I used python.
+
+*** I used a library called "Scapy". This library should be installed
+in order to run the code. This library is used to spoof the source ip
+and/or source port easily.
+
+*** The T-bag's raw socket is used at 4.line of the code.
+s = conf.L3socket(iface='T-bag-eth0')
+The part which says 'T-bag-eth0' should be given correctly. This can be found
+by typing ifconfig on T-bag's terminal. And getting the first interface name.
+It is the first word of the very first line of the output of ifconfig on T-bag's terminal.
+
+
+
+Then the code can be run as: python flood.py 
+
+##### REFERENCES #####
+
+https://byt3bl33d3r.github.io/mad-max-scapy-improving-scapys-packet-sending-performance.html
+
+I used this site to improve my scapy performance. I gave created scapy packet to the raw
+python socket.
+
+// Related code part from the website.
+
+from scapy.all import *
+
+s = conf.L3socket(iface='enp3s0') // that line is used to create socket.
+for i in range(0, 10):
+    s.send(ARP(pdst='192.168.1.88',  // sending the packet with the created socket.
+               psrc='192.168.1.11', 
+               hwdst='f0:84:2f:fb:a8:89', 
+               op='is-at')
+          )
+    print 'sent packet'
+
+
