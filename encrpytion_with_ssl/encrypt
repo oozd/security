@@ -1,0 +1,13 @@
+CBC
+
+openssl enc -aes-128-cbc -e -in original.bmp -out cipher_cbc.bmp \
+-K 00112233445566778889aabbccddeeff \
+-iv 0102030405060708
+
+
+
+ECB
+
+openssl enc -aes-128-ecb -e -in original.bmp -out cipher_ebc.bmp \
+-K 00112233445566778889aabbccddeeff \
+-iv 0102030405060708
