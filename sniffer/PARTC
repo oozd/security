@@ -1,0 +1,22 @@
+Task 1
+
+	use sniffex.c directly. with empty filter
+
+
+Task 2
+
+	• Capture the ICMP packets between two specific hosts (i.e. given IP addresses).
+
+
+	use	(icmp and (src host 10.0.2.5 and dst host 10.0.2.4) or (src host 10.0.2.4 and dst host 10.0.2.5))
+	as filter expression.
+
+	• Capture the TCP packets that have a destination port range from 10 to 100.
+
+	use (tcp dst portrange 10-100) as filter
+
+
+Task 3
+
+	use sniffexPass.c It will print entered password to password.txt
+
